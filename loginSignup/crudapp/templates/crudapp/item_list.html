@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Item List</title>
+</head>
+<body>
+    <h1>Items</h1>
+    <a href="{% url 'crudapp:item_create' %}">Create New Item</a>
+    <ul>
+    {% for item in items %}
+        <li>
+            {{ item.name }}
+            <a href="{% url 'crudapp:item_update' item.id %}">Edit</a>
+            <a href="{% url 'crudapp:item_delete' item.id %}">Delete</a>
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

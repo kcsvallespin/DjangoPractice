@@ -1,0 +1,2 @@
+cd loginSignup
+python manage.py runserver

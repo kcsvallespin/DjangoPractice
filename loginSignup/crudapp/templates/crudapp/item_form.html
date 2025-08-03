@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ action }} Item</title>
+</head>
+<body>
+    <h1>{{ action }} Item</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" 
+               value="{% if item %}{{ item.name }}{% endif %}" required>
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'crudapp:item_list' %}">Cancel</a>
+</body>
+</html>
